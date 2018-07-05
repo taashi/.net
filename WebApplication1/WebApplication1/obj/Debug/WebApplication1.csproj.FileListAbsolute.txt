@@ -81,8 +81,8 @@ c:\users\taashi\source\repos\WebApplication1\WebApplication1\bin\Microsoft.AI.De
 c:\users\taashi\source\repos\WebApplication1\WebApplication1\bin\Microsoft.AI.WindowsServer.xml
 c:\users\taashi\source\repos\WebApplication1\WebApplication1\bin\Microsoft.AI.Web.xml
 c:\users\taashi\source\repos\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-c:\users\taashi\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojAssemblyReference.cache
 c:\users\taashi\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
 c:\users\taashi\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 c:\users\taashi\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 c:\users\taashi\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Taashi\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojAssemblyReference.cache

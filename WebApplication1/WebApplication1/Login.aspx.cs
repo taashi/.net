@@ -13,37 +13,37 @@ namespace WebApplication1
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\StudentData.mdf;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            usertxt.Text = "";
-            pswrdtxt.Text = "";
-            Label4.Text = "";
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if ((usertxt.Text != "") && (pswrdtxt.Text != ""))
-            {
-                string check = "select count(*) from [Table] where Name = '" + usertxt.Text + "' and Password = '" + pswrdtxt.Text
-                    + "'";
-                SqlCommand com = new SqlCommand(check, con);
-                con.Open();
-                int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
-                con.Close();
-                if (temp == 1)
-                {
-                    Response.Redirect("Home.aspx");
-                }
-                else
-                {
-                    Label4.ForeColor = System.Drawing.Color.Red;
-                    Label4.Text = "Your email or password is invalid";
-                }
+			if ((usertxt.Text.Equals("")) || (pswrdtxt.Text.Equals("")))
+			{
+				Label4.ForeColor = System.Drawing.Color.Red;
+				Label4.Text = "Please enter your email and password";
+			}
+			else
+			{
+				string check = "select count(*) from [Table] where Name = '" + usertxt.Text + "' and Password = '" + pswrdtxt.Text
+					+ "'";
+				SqlCommand com = new SqlCommand(check, con);
+				con.Open();
+				int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
+				Console.WriteLine("before", temp);
+				con.Close();
+				Console.WriteLine("afer", temp);
+				if (temp == 1)
+				{
+					Response.Redirect("Home.aspx");
+				}
+				if (temp == 0)
+				{
+					Label4.ForeColor = System.Drawing.Color.Red;
+					Label4.Text = "Your email or password is invalid. Please enter the correct details or sign up";
+				}
 
-            }
-            else
-            {
-                Label4.ForeColor = System.Drawing.Color.Red;
-                Label4.Text = "Please enter your email and password";
-            }
+			}
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)

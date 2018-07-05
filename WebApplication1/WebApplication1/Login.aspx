@@ -27,7 +27,9 @@
         <p>
         <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="pswrdtxt" runat="server"></asp:TextBox>
+            <asp:TextBox ID="pswrdtxt" runat="server" ErrorMessage="Minimum password length is 6" ValidationExpression="^([a-zA-Z0-9@#$%^&+=*]{6,30})$"
+
+                ValidationGroup="RegisterCheck" ></asp:TextBox>
         </p>
         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
         <br />
