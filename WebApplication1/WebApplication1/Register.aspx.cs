@@ -26,21 +26,19 @@ namespace WebApplication1
 			}
 			else
 			{
-				string checkuser = "SELECT TOP 1 Name FROM [Table] WHERE Name='" + nametxt.Text + "'";
+				string checkuser = "SELECT TOP 1 Name FROM [StudentSignUpDetails] WHERE Name='" + nametxt.Text + "'";
 				SqlCommand com1 = new SqlCommand(checkuser, con);
 				con.Open();
 				string temp = com1.ExecuteScalar() as string;
-				//int temp = Convert.ToInt32(com1.ExecuteScalar().ToString());
 				con.Close();
 				if (temp != null)
 				{
 					Response.Write("User already exists");
 				}
-				//con.Close();
+				
 				else
 				{
-					string ins = "Insert into [Table](Name,Password) values ('" + nametxt.Text + "','"
-						+ passwordtxt.Text + "')";
+					string ins = "Insert into [StudentSignUpDetails](Name,Password,FirstName,LastName,Course) values ('" + nametxt.Text + "','"+ passwordtxt.Text + "','" + fname.Text + "','" + lname.Text + "','"+ course.Text +"')";
 
 					SqlCommand com = new SqlCommand(ins, con);
 
@@ -49,8 +47,7 @@ namespace WebApplication1
 					com.ExecuteNonQuery();
 					con.Close();
 					Response.Write("<script language='javascript'>window.alert('You will be redirected to the login page. Please click ok');window.location='Login.aspx';</script>");
-					//Response.Redirect("Login.aspx");
-					//Label4.Text = "You will be redirected to login page";
+					
 					
 					
 				}

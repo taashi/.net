@@ -25,17 +25,19 @@ namespace WebApplication1
 			}
 			else
 			{
-				string check = "select count(*) from [Table] where Name = '" + usertxt.Text + "' and Password = '" + pswrdtxt.Text
+				string check = "select count(*) from [StudentSignUpDetails] where Name = '" + usertxt.Text + "' and Password = '" + pswrdtxt.Text
 					+ "'";
 				SqlCommand com = new SqlCommand(check, con);
 				con.Open();
 				int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
-				Console.WriteLine("before", temp);
 				con.Close();
-				Console.WriteLine("afer", temp);
 				if (temp == 1)
 				{
-					Response.Redirect("Home.aspx");
+					
+						Session["id"] = usertxt.Text;
+						Response.Redirect("Home.aspx");
+						Session.RemoveAll();
+						
 				}
 				if (temp == 0)
 				{

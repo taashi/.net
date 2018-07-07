@@ -12,24 +12,31 @@
         </div>
         <asp:Label ID="Label1" runat="server" Text="Login page"></asp:Label>
         <p>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Register.aspx">Sing up now</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Register.aspx">Sign up now</asp:HyperLink>
         </p>
         <p>
         <asp:Label ID="Label2" runat="server" Text="UserName"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="usertxt" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="usertxt" Display="Dynamic" ErrorMessage="Email is required" ValidationGroup="AllValidators">*</asp:RequiredFieldValidator>
+            <asp:TextBox ID="usertxt" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="usertxt" Display="Dynamic" ErrorMessage="Email is required" ValidationGroup="AllValidators">*</asp:RequiredFieldValidator>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="usertxt" Display="Dynamic" ErrorMessage="E-mail addresses must be in the format of name@domain.xyz" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="AllValidators">Invalid format!		 </asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="usertxt" Display="Dynamic" ErrorMessage="E-mail addresses must be in the format of name@domain.xyz" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="AllValidators" ForeColor="Red">Invalid format!E-mail addresses must be in the format of name@domain.xyz		 </asp:RegularExpressionValidator>
+
         </p>
         <p>
             &nbsp;</p>
         <p>
         <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="pswrdtxt" runat="server" ErrorMessage="Minimum password length is 6" ValidationExpression="^([a-zA-Z0-9@#$%^&+=*]{6,30})$"
+            <asp:TextBox ID="pswrdtxt"  TextMode =" Password"
+                runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
 
-                ValidationGroup="RegisterCheck" ></asp:TextBox>
+            <asp:RegularExpressionValidator ID="Regex2" runat="server" ControlToValidate="pswrdtxt"
+    ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"
+    ErrorMessage="Minimum 8 characters atleast 1 Alphabet, 1 Number and 1 Special Character" ForeColor="Red" />
+            
         </p>
         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
         <br />

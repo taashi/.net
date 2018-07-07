@@ -11,7 +11,13 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+			Label3.Text = Session["id"].ToString();
+		}
 
-        }
-    }
+		protected void Button1_Click(object sender, EventArgs e)
+		{
+			Session.RemoveAll();
+			Response.Redirect("Login.aspx");
+		}
+	}
 }
