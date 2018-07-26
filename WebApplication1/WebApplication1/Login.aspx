@@ -5,6 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        #form1 {
+            background-color: #FF99FF;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

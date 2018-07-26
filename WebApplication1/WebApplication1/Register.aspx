@@ -6,6 +6,12 @@
 <head runat="server">
     <title></title>
     
+    <style type="text/css">
+        #form1 {
+            background-color: #FF99FF;
+        }
+    </style>
+    
 </head>
 <body>
     
@@ -14,7 +20,7 @@
         
         <div>
         </div>
-        <asp:Label ID="Label1" runat="server" Text="Registration Page" BackColor ="Blue"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Registration Page" BackColor ="Blue" style="background-color: #FF99FF"></asp:Label>
         <p>
             &nbsp;</p>
         <p>

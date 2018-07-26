@@ -17,6 +17,23 @@
         <asp:Label ID="Label2" runat="server" Text="You have signed in!"></asp:Label>
         </p>
         <p>
+            &nbsp;</p>
+        <p>
+            <asp:GridView ID="GridView1" AutoGenerateColumns="False" runat="server"  Width="236px"  >
+                <Columns>
+                    <asp:BoundField DataField ="Major" HeaderText ="Major" />
+                     <asp:BoundField DataField ="CourseID" HeaderText =" Course Id" />
+                     <asp:BoundField DataField ="RegisteredCourses" HeaderText =" Registered Courses" />
+                    
+                </Columns>
+                
+               
+                   
+            </asp:GridView>
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
             <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" />
         </p>
     </form>
