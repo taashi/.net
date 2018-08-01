@@ -19,7 +19,7 @@ namespace WebApplication1
 			SqlDataAdapter da;
 			DataTable ds = new DataTable();
 			con.Open();
-			string checkuser = "SELECT Major,CourseID,RegisteredCourses FROM [Courses] inner join StudentSignUpDetails on Courses.StudName = StudentSignUpDetails.Name ";
+			string checkuser = "SELECT StudName,Major,CourseID,RegisteredCourses FROM [CoursesReg] INNER JOIN StudentSignUpDetails ON StudentSignUpDetails.Name = CoursesReg.StudName WHERE StudName = '" + Label3.Text + "'" ;
 			SqlCommand com1 = new SqlCommand(checkuser, con);
 			da = new SqlDataAdapter(com1);
 			da.Fill(ds);
@@ -34,7 +34,9 @@ namespace WebApplication1
 			Response.Redirect("Login.aspx");
 		}
 
-
-		
+		protected void Button2_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("WebForm2.aspx");
+		}
 	}
 }

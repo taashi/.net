@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+            <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" />
         <div>
         </div>
         &nbsp;<p>
@@ -34,7 +35,7 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" />
+            <asp:Button ID="Button2" runat="server" Text="Add Courses" OnClick="Button2_Click" />
         </p>
     </form>
 </body>
